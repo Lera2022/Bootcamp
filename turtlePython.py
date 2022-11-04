@@ -1,5 +1,6 @@
 from turtle import *
 from random import randint
+from time import *
 
 finish = 200    # дистанция гонки
 
@@ -45,3 +46,4 @@ t2.onclick(catch2)  # прикрепляю обработчик к событи�
 while t1.xcor() < finish and t2.xcor() < finish:
     t1.forward(randint(2, 7))   # здесь черепаха двигается вперёд и рисует на случайное число в диапазоне от 2 до 7
     t2.forward(randint(2, 7))
+    sleep(0.05)

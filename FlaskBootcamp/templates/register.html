@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% if form %}
+<form action="" method="post">
+    {{ form.csrf_token }}
+
+    {{ form.name.label }} 
+    {{ form.name() }}
+    <br>
+    {{ form.email.label }} 
+    {{ form.email() }}
+    <br>
+    {{ form.password.label }} 
+    {{ form.password() }}
+    <br>
+    {{ form.password_again.label }} 
+    {{ form.password_again() }}
+    <br>
+    {{ form.remember_me.label }} 
+    {{ form.remember_me() }}
+    <br>
+    {{ form.submit() }}
+{% endif %}
+
+{% if message == 'Регистрация прошла успешно'%}
+    <a href="/log">Авторизация</a>
+{% endif %}
+{{ message }}
+
+
+
+</form>
+
+
+
+
+
+{% endblock %}
